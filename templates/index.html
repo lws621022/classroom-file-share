@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>教室檔案分享系統</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body data-max-mb="{{ max_upload_mb }}">
+  <header><div class="brand-icon" aria-hidden="true">↗</div><div class="brand">CLASSROOM <span>／ 教室共享空間</span></div><span class="lan">校內 LAN</span></header>
+  <main>
+    <div class="intro"><p class="eyebrow">學習資源，一站傳遞</p><h1>教室檔案分享系統</h1><p>下載老師的教材，將完成的作業交給老師。</p></div>
+    <div class="workspace">
+      <section class="panel downloads" aria-labelledby="download-title">
+        <div class="section-head"><div><span class="step">01 / DOWNLOAD</span><h2 id="download-title">老師提供的檔案</h2></div><button id="refresh" class="secondary" type="button">↻ 重新整理</button></div>
+        <p class="section-note">依修改時間由新到舊排列</p>
+        <p id="list-status" role="status">正在讀取檔案…</p>
+        <div class="table-scroll"><table><thead><tr><th>檔案名稱</th><th>大小 / 修改日期</th><th><span class="sr-only">操作</span></th></tr></thead><tbody id="file-list"></tbody></table></div>
+        <div class="panel-footer"><span class="dot"></span>老師更新教材後，按「重新整理」即可查看。</div>
+      </section>
+      <section class="panel upload" aria-labelledby="upload-title">
+        <div class="section-head"><div><span class="step">02 / UPLOAD</span><h2 id="upload-title">上傳檔案給老師</h2></div></div>
+        <p class="section-note">上傳內容僅供老師查看。</p>
+        <form id="upload-form">
+          <label class="field-label" for="student-id">學號 <span>必填</span></label>
+          <input id="student-id" name="student_id" type="text" inputmode="numeric" pattern="[0-9]{4,12}" maxlength="12" placeholder="例如：413523" required aria-describedby="id-help">
+          <p id="id-help" class="hint">請輸入 4～12 位數字。</p>
+          <div id="drop-zone" class="drop-zone">
+            <div class="upload-icon" aria-hidden="true">↑</div><strong>將檔案拖曳到這裡</strong><span>或從電腦選擇檔案</span>
+            <button id="choose" class="secondary" type="button">選擇檔案</button><input id="files" type="file" multiple hidden>
+          </div>
+          <div class="selection-head"><span id="selection-count">尚未選擇檔案</span><button id="clear" type="button" class="text-button">清除</button></div>
+          <ul id="selected-files"></ul>
+          <p class="hint">可一次上傳多個檔案，總容量上限 {{ max_upload_mb }} MB。</p>
+          <button id="submit" class="primary" type="submit">上傳給老師 <span aria-hidden="true">↗</span></button>
+          <progress id="progress" max="100" value="0" hidden aria-label="上傳進度"></progress>
+          <div id="upload-result" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+    </div>
+    <footer>不需要登入，也不需要安裝程式。<span>教室檔案分享 · LAN</span></footer>
+  </main>
+</body>
+</html>

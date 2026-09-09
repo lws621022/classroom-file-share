@@ -1,0 +1,50 @@
+# Private settings and runtime data (at any depth)
+config.json
+config.json.*
+config.local.json
+.env
+.env.*
+!.env.example
+*.log
+*.log.*
+學生下載/
+學生上傳/
+test-output/
+.upload-*.part
+
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# Build outputs; keep classroom.spec and build.bat
+/build/
+/dist/
+/release-artifacts/
+*.exe
+*.pkg
+
+# Temporary, IDE and OS files
+*.tmp
+*.temp
+*.part
+*.bak
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+.vs/
+.DS_Store
+Thumbs.db
+Desktop.ini
