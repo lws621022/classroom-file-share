@@ -8,6 +8,13 @@
 
 不需要學生安裝程式、帳號登入、Windows SMB 共用資料夾、FTP 或雲端服務。
 
+## Windows 版下載
+
+- **[直接下載 Windows ZIP（v1.0.0）](https://github.com/lws621022/classroom-file-share/releases/download/v1.0.0/ClassroomFileShare-v1.0.0-Windows.zip)**
+- **[查看 v1.0.0 Release 頁面與版本說明](https://github.com/lws621022/classroom-file-share/releases/tag/v1.0.0)**
+
+一般老師請下載上面的 Windows ZIP，完整解壓縮後執行 `教室檔案分享.exe`。GitHub 的 Code 檔案清單及 Source code ZIP 是原始碼，不是 Windows 執行版。
+
 ## 功能特色
 
 - 學生免登入，使用瀏覽器即可下載教材與上傳作業。
@@ -23,7 +30,7 @@
 
 ## 使用方式
 
-1. 從本專案 **Releases** 下載 `ClassroomFileShare-v1.0.0-Windows.zip`。第一次公開發佈前，維護者須先依 [發佈指南](docs/PUBLISHING.md) 上傳下載包。
+1. 下載上方的 **Windows ZIP**，或在 [v1.0.0 Release 頁面](https://github.com/lws621022/classroom-file-share/releases/tag/v1.0.0) 的 **Assets** 區域選擇 `ClassroomFileShare-v1.0.0-Windows.zip`。
 2. 將 ZIP **完整解壓縮** 到有寫入權限的資料夾，不要直接在壓縮檔內執行。
 3. 雙擊 `教室檔案分享.exe`，老師電腦不需要安裝 Python。
 4. 第一次設定老師 IP、Port、學生下載資料夾、學生上傳資料夾。不存在的資料夾會在儲存時建立。
